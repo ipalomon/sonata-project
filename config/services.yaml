@@ -6,6 +6,15 @@
 parameters:
 
 services:
+    admin.category:
+        class: App\Admin\CategoryAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Entity\Category, manager_type: orm, label: Category }
+    admin.blog_post:
+        class: App\Admin\BlogPostAdmin
+        tags:
+            - { name: sonata.admin, model_class: App\Entity\BlogPost, manager_type: orm, label: 'Blog post' }
+
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.
